@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT Incident Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>IT Incident Management Portal</h1>
+    <p>Enterprise Incident Tracking System</p>
+</header>
+
+<main>
+
+    <section class="dashboard">
+        <div class="card">
+            <h3>Total Incidents</h3>
+            <h2 id="total">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Open Incidents</h3>
+            <h2 id="open">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>In Progress</h3>
+            <h2 id="progress">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Resolved</h3>
+            <h2 id="resolved">0</h2>
+        </div>
+    </section>
+
+    <section class="form-section">
+
+        <h2>Create New Incident</h2>
+
+        <form id="incidentForm">
+
+            <input type="text"
+                   id="title"
+                   placeholder="Incident Title"
+                   required>
+
+            <textarea id="description"
+                      placeholder="Incident Description"
+                      required></textarea>
+
+            <select id="priority" required>
+                <option value="">Select Priority</option>
+                <option value="P1">P1 - Critical</option>
+                <option value="P2">P2 - High</option>
+                <option value="P3">P3 - Medium</option>
+                <option value="P4">P4 - Low</option>
+            </select>
+
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="Application">Application</option>
+                <option value="Network">Network</option>
+                <option value="Database">Database</option>
+                <option value="Infrastructure">Infrastructure</option>
+            </select>
+
+            <input type="text"
+                   id="assignedTo"
+                   placeholder="Assigned Engineer"
+                   required>
+
+            <button type="submit">Create Incident</button>
+
+        </form>
+
+    </section>
+
+    <section class="incident-section">
+
+        <h2>Incident Records</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="incidentTable"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
